@@ -16,7 +16,7 @@ def create_new(folders, typ, buoy, dest, lag):
     dict_target         = {}
     dict_rel            = {}
     list_dates          = []
-    first_train_date    = pd.to_datetime(folders[0].split('/')[-2] + ' 03:00:00')
+    first_train_date    = pd.to_datetime(folders[0].split('/')[-2].split('-')[1] +  ' 03:00:00') 
 
     max_number_pred     = lag*8
     for j in tqdm(range(0,max_number_pred), desc='Processing dataset...'):
